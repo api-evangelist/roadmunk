@@ -1,0 +1,87 @@
+name: Roadmunk Plans and Pricing
+description: >-
+  Roadmunk (Strategic Roadmaps by Tempo) offers tiered subscription plans for
+  product roadmapping. Plans differ in the number of editors, reviewers,
+  features such as API access, integrations, and level of customer support.
+  A 14-day free trial is available with no credit card required.
+specificationVersion: "0.1"
+url: https://www.capterra.com/p/145895/Roadmunk/pricing/
+plans:
+  - name: Starter
+    description: >-
+      Entry-level plan for small teams getting started with product roadmapping.
+      Includes feedback collection, a Chrome extension, a feedback portal, idea
+      creation and prioritization, and one-way sync with Jira and Azure DevOps.
+    pricing:
+      - price: 19.00
+        unit: month
+        currency: USD
+        model: flat-rate
+    features:
+      - Feedback collection
+      - Chrome extension
+      - Feedback portal
+      - Idea creation and prioritization
+      - One-way Jira sync
+      - One-way Azure DevOps sync
+      - 3 reviewers per account
+    limits:
+      reviewers: 3
+      apiAccess: false
+
+  - name: Business
+    description: >-
+      Mid-tier plan for growing product teams requiring API access, custom
+      roadmap color palettes, and additional reviewer seats.
+    pricing:
+      - price: 49.00
+        unit: user/month
+        currency: USD
+        model: per-user
+    features:
+      - Everything in Starter
+      - API access tokens
+      - Custom roadmap color palettes
+      - 5 reviewers per account
+    limits:
+      reviewers: 5
+      apiAccess: true
+
+  - name: Professional
+    description: >-
+      Advanced plan for mature product teams requiring dedicated customer
+      success support, API access, custom color palettes, and expanded reviewer
+      capacity.
+    pricing:
+      - price: 99.00
+        unit: user/month
+        currency: USD
+        model: per-user
+    features:
+      - Everything in Business
+      - Designated customer success manager
+      - 10 reviewers per account
+    limits:
+      reviewers: 10
+      apiAccess: true
+
+  - name: Enterprise
+    description: >-
+      Custom enterprise plan with advanced customization, API access, custom
+      reviewer limits, dedicated customer success management, and tailored
+      pricing based on organizational requirements.
+    pricing:
+      - price: 0.00
+        unit: custom
+        currency: USD
+        model: custom
+    features:
+      - Everything in Professional
+      - Advanced customization
+      - Custom reviewer limits
+      - Customer success manager
+      - SSO support
+      - Priority support
+    limits:
+      reviewers: custom
+      apiAccess: true

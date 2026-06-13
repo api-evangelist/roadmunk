@@ -1,0 +1,97 @@
+name: Roadmunk FinOps
+description: >-
+  FinOps Framework FOCUS-aligned cost and usage profile for Roadmunk
+  (Strategic Roadmaps by Tempo). Roadmunk is a SaaS product roadmapping
+  platform with per-user subscription pricing on Business and Professional
+  tiers, and flat-rate pricing on the Starter tier. API access is available
+  starting at the Business tier ($49/user/month). Cost optimization focuses
+  on right-sizing user seat counts, plan tier selection, and annual vs
+  monthly billing decisions.
+specificationVersion: "1.0"
+url: https://www.capterra.com/p/145895/Roadmunk/pricing/
+provider: Roadmunk (Tempo Software)
+serviceCategory: Product Roadmapping / SaaS
+deploymentModel: SaaS
+billingModels:
+  - name: Flat Rate
+    description: >-
+      Starter plan billed at a flat $19/month regardless of user count.
+      Suitable for small teams with limited roadmapping needs.
+    unit: account/month
+    currency: USD
+    basePrice: 19.00
+    applicablePlans:
+      - Starter
+
+  - name: Per-User Subscription
+    description: >-
+      Business and Professional plans are billed per editor seat per month.
+      Reviewer seats are included at no additional cost up to the plan limit.
+    unit: user/month
+    currency: USD
+    applicablePlans:
+      - Business
+      - Professional
+    tiers:
+      - plan: Business
+        pricePerUnit: 49.00
+        currency: USD
+      - plan: Professional
+        pricePerUnit: 99.00
+        currency: USD
+
+  - name: Custom Enterprise
+    description: >-
+      Enterprise pricing is negotiated directly with Tempo Sales based on
+      seat count, feature requirements, SSO needs, and support levels.
+    unit: custom
+    currency: USD
+    applicablePlans:
+      - Enterprise
+
+costOptimization:
+  - recommendation: Right-size user seats
+    description: >-
+      Audit active editor seat usage monthly. Remove inactive users to reduce
+      per-seat costs on Business and Professional plans. Reviewers are
+      included and do not incur seat costs.
+    estimatedSavings: medium
+
+  - recommendation: Annual vs monthly billing
+    description: >-
+      Evaluate annual billing discounts offered by Tempo for Roadmunk plans.
+      Annual commitments typically reduce effective per-month costs compared
+      to month-to-month billing.
+    estimatedSavings: low-to-medium
+
+  - recommendation: Plan tier alignment
+    description: >-
+      The Starter plan ($19/month flat) may suffice for small teams that do
+      not require API access. API access tokens are only available on Business
+      ($49/user/month) and above. Avoid paying for Professional or Business
+      tiers if API and advanced features are not actively used.
+    estimatedSavings: high
+
+  - recommendation: Review reviewer seat usage
+    description: >-
+      Reviewer roles (Starter: 3, Business: 5, Professional: 10) are included
+      in plan pricing. Use Reviewer roles for stakeholders who only need
+      view/comment access to avoid consuming paid editor seats.
+    estimatedSavings: medium
+
+tagging:
+  recommended:
+    - cost-center
+    - team
+    - product
+    - environment
+  notes: >-
+    Roadmunk does not expose native tagging for SaaS cost attribution.
+    Use internal tracking (e.g., finance spreadsheet or FinOps platform)
+    to map Roadmunk subscription costs to cost centers or product teams.
+
+foreignExchange:
+  billingCurrency: USD
+  notes: >-
+    Roadmunk/Tempo bills in USD. Organizations operating in other currencies
+    should account for FX fluctuation in their SaaS budget forecasts.

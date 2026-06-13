@@ -1,0 +1,45 @@
+name: Roadmunk API Rate Limits
+description: >-
+  Roadmunk's GraphQL API (Strategic Roadmaps by Tempo) applies data allowance
+  controls described as "generous and simplified" in official documentation.
+  No specific numeric rate limits (requests per second, requests per minute,
+  or daily quotas) are publicly documented. Pagination is implemented for
+  large dataset queries; pagination parameters are available in the GraphQL
+  Playground for each query type. Customers on VPC or Enterprise plans should
+  contact Tempo Support for gateway-specific guidance.
+specificationVersion: "0.1"
+url: https://help.tempo.io/roadmaps/latest/getting-started-with-the-strategic-roadmaps-graphq
+limits:
+  - name: GraphQL Data Allowance
+    description: >-
+      The API uses simplified data allowances to prevent micromanagement of
+      request rates. Specific numeric thresholds are not published. The
+      allowance applies across all queries and mutations made using a given
+      API access token.
+    scope: account
+    disclosed: false
+    notes: >-
+      No documented requests-per-second or requests-per-minute limit.
+      Pagination is available for large query results via parameters
+      documented in the GraphQL Playground.
+
+  - name: Pagination
+    description: >-
+      Pagination is implemented for queries that return large datasets.
+      Pagination parameters are available within the GraphQL Playground
+      for each respective query. Consumers should use pagination to
+      efficiently retrieve large result sets and avoid performance issues.
+    scope: query
+    disclosed: true
+    notes: >-
+      Consult the GraphQL Playground at your regional gateway
+      (app-gateway.roadmunk.com, eu-gateway.roadmunk.com, or
+      apac-gateway.roadmunk.com) for pagination parameter details
+      specific to each query.
+gateways:
+  - region: North America
+    url: https://app-gateway.roadmunk.com/
+  - region: Europe
+    url: https://eu-gateway.roadmunk.com/
+  - region: Asia-Pacific
+    url: https://apac-gateway.roadmunk.com/
