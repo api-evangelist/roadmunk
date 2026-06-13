@@ -1,0 +1,121 @@
+{
+  "@context": {
+    "@version": 1.1,
+    "schema": "https://schema.org/",
+    "skos": "http://www.w3.org/2004/02/skos/core#",
+    "roadmunk": "https://roadmunk.com/vocab/",
+
+    "name": "schema:name",
+    "description": "schema:description",
+    "url": "schema:url",
+    "image": "schema:image",
+    "provider": "schema:provider",
+    "dateCreated": "schema:dateCreated",
+    "dateModified": "schema:dateModified",
+
+    "SoftwareApplication": "schema:SoftwareApplication",
+    "WebAPI": "schema:WebAPI",
+    "Organization": "schema:Organization",
+    "Product": "schema:Product",
+
+    "Roadmap": {
+      "@id": "roadmunk:Roadmap",
+      "@type": "skos:Concept",
+      "skos:prefLabel": "Roadmap",
+      "skos:definition": "A strategic plan displayed as a timeline or swimlane view, representing product or portfolio direction."
+    },
+    "RoadmapItem": {
+      "@id": "roadmunk:RoadmapItem",
+      "@type": "skos:Concept",
+      "skos:prefLabel": "Roadmap Item",
+      "skos:definition": "A discrete feature, initiative, or task placed on a roadmap."
+    },
+    "Milestone": {
+      "@id": "roadmunk:Milestone",
+      "@type": "skos:Concept",
+      "skos:prefLabel": "Milestone",
+      "skos:definition": "A significant checkpoint or date marker on a roadmap timeline."
+    },
+    "Swimlane": {
+      "@id": "roadmunk:Swimlane",
+      "@type": "skos:Concept",
+      "skos:prefLabel": "Swimlane",
+      "skos:definition": "A horizontal row on a roadmap that groups related items by team, theme, or category."
+    },
+    "Portfolio": {
+      "@id": "roadmunk:Portfolio",
+      "@type": "skos:Concept",
+      "skos:prefLabel": "Portfolio",
+      "skos:definition": "A collection of roadmaps grouped for cross-product or organizational visibility."
+    },
+    "Feedback": {
+      "@id": "roadmunk:Feedback",
+      "@type": "skos:Concept",
+      "skos:prefLabel": "Feedback",
+      "skos:definition": "Customer-submitted input or requests captured for product planning consideration."
+    },
+    "Idea": {
+      "@id": "roadmunk:Idea",
+      "@type": "skos:Concept",
+      "skos:prefLabel": "Idea",
+      "skos:definition": "A proposed feature or improvement that can be promoted to a roadmap item."
+    },
+    "Customer": {
+      "@id": "roadmunk:Customer",
+      "@type": "skos:Concept",
+      "skos:prefLabel": "Customer",
+      "skos:definition": "An organization or individual whose feedback and requests are tracked in Roadmunk."
+    },
+    "Contact": {
+      "@id": "roadmunk:Contact",
+      "@type": "skos:Concept",
+      "skos:prefLabel": "Contact",
+      "skos:definition": "A person associated with a customer account in the Roadmunk feedback system."
+    },
+    "KeyDate": {
+      "@id": "roadmunk:KeyDate",
+      "@type": "skos:Concept",
+      "skos:prefLabel": "Key Date",
+      "skos:definition": "A notable date associated with a roadmap item or milestone, used for tracking commitments."
+    },
+    "GraphQLQuery": {
+      "@id": "roadmunk:GraphQLQuery",
+      "@type": "skos:Concept",
+      "skos:prefLabel": "GraphQL Query",
+      "skos:definition": "A read operation against the Roadmunk GraphQL API for retrieving roadmap data."
+    },
+    "GraphQLMutation": {
+      "@id": "roadmunk:GraphQLMutation",
+      "@type": "skos:Concept",
+      "skos:prefLabel": "GraphQL Mutation",
+      "skos:definition": "A write operation against the Roadmunk GraphQL API for creating, updating, or deleting data."
+    },
+    "BearerToken": {
+      "@id": "roadmunk:BearerToken",
+      "@type": "skos:Concept",
+      "skos:prefLabel": "Bearer Token",
+      "skos:definition": "The authentication credential required to authorize requests to the Roadmunk GraphQL API."
+    },
+    "RegionalGateway": {
+      "@id": "roadmunk:RegionalGateway",
+      "@type": "skos:Concept",
+      "skos:prefLabel": "Regional Gateway",
+      "skos:definition": "One of three geographic API endpoints (North America, Europe, Asia-Pacific) serving the Roadmunk GraphQL API."
+    }
+  },
+  "@graph": [
+    {
+      "@type": "WebAPI",
+      "name": "Roadmunk GraphQL API",
+      "description": "The Strategic Roadmaps (Roadmunk) GraphQL API provides programmatic access to roadmaps, items, milestones, key dates, portfolios, feedback, ideas, customers, contacts, accounts, and user management across three regional gateways.",
+      "url": "https://app-gateway.roadmunk.com/",
+      "provider": {
+        "@type": "Organization",
+        "name": "Roadmunk (Tempo)",
+        "url": "https://roadmunk.com"
+      },
+      "dateCreated": "2026-06-13",
+      "dateModified": "2026-06-13"
+    }
+  ]
+}

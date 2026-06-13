@@ -1,0 +1,97 @@
+{
+  "provider": "roadmunk",
+  "blogUrl": "https://www.tempo.io/blog",
+  "fetched": "2026-06-13",
+  "posts": [
+    {
+      "title": "Good questions to ask in a project manager job interview",
+      "url": "https://www.tempo.io/blog/10-killer-interview-questions-hiring-project-managers",
+      "date": "",
+      "description": "Interview questions and strategies for hiring project managers."
+    },
+    {
+      "title": "Weighing CapEx versus OpEx for budget optimization",
+      "url": "https://www.tempo.io/blog/capex-vs-opex",
+      "date": "",
+      "description": "Guidance on capital expenditure vs operating expenditure budget decisions."
+    },
+    {
+      "title": "How to challenge the status quo: A leader's playbook",
+      "url": "https://www.tempo.io/blog/challenge-the-status-quo",
+      "date": "",
+      "description": "Leadership strategies for driving organizational change."
+    },
+    {
+      "title": "5 monday.com alternatives for portfolio leaders (2026)",
+      "url": "https://www.tempo.io/blog/monday-com-alternatives",
+      "date": "",
+      "description": "Comparison of monday.com alternatives for portfolio management leaders."
+    },
+    {
+      "title": "8 Planview Portfolios alternatives in 2026",
+      "url": "https://www.tempo.io/blog/planview-alternatives",
+      "date": "",
+      "description": "Alternatives to Planview Portfolios for enterprise project portfolio management."
+    },
+    {
+      "title": "Resource management software for engineering and PMO leaders in 2026",
+      "url": "https://www.tempo.io/blog/resource-management-software",
+      "date": "",
+      "description": "Overview of resource management software options for engineering and PMO teams."
+    },
+    {
+      "title": "Enterprise project management software for portfolio leaders in 2026",
+      "url": "https://www.tempo.io/blog/enterprise-project-management-software",
+      "date": "",
+      "description": "Guide to enterprise project management software for portfolio leaders."
+    },
+    {
+      "title": "The best project portfolio management software in 2026",
+      "url": "https://www.tempo.io/blog/what-should-a-ppm-tool-do-for-you",
+      "date": "",
+      "description": "Evaluation of top project portfolio management tools."
+    },
+    {
+      "title": "6 Clarity PPM alternatives in 2026",
+      "url": "https://www.tempo.io/blog/clarity-ppm-alternatives",
+      "date": "",
+      "description": "Alternatives to Clarity PPM for enterprise portfolio management."
+    },
+    {
+      "title": "What is workforce intelligence?",
+      "url": "https://www.tempo.io/blog/workforce-intelligence",
+      "date": "",
+      "description": "Introduction to workforce intelligence concepts and applications."
+    },
+    {
+      "title": "Portfolio reporting that holds up when the CFO asks a follow-up",
+      "url": "https://www.tempo.io/blog/portfolio-reporting",
+      "date": "",
+      "description": "Best practices for portfolio reporting that satisfies executive scrutiny."
+    },
+    {
+      "title": "6 best resource scheduling software for engineering teams in 2026",
+      "url": "https://www.tempo.io/blog/resource-scheduling-software-engineering-teams",
+      "date": "",
+      "description": "Top resource scheduling tools for engineering team capacity management."
+    },
+    {
+      "title": "How to calculate sprint capacity",
+      "url": "https://www.tempo.io/blog/how-to-calculate-sprint-capacity",
+      "date": "",
+      "description": "Methods and formulas for calculating sprint capacity in agile teams."
+    },
+    {
+      "title": "Workforce capacity planning for engineering teams",
+      "url": "https://www.tempo.io/blog/workforce-capacity-planning",
+      "date": "",
+      "description": "Strategies for workforce capacity planning tailored to engineering teams."
+    },
+    {
+      "title": "Appfire BigPicture alternatives",
+      "url": "https://www.tempo.io/blog/appfire-bigpicture-alternatives",
+      "date": "",
+      "description": "Alternatives to Appfire BigPicture for portfolio and program management."
+    }
+  ]
+}
