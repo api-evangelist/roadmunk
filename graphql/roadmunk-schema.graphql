@@ -1,0 +1,505 @@
+"""
+Roadmunk (Strategic Roadmaps by Tempo) GraphQL API Schema
+Endpoint: https://app-gateway.roadmunk.com/public/graphql
+Source: Live introspection via __schema query
+"""
+
+scalar Date
+scalar Day
+
+enum AccountRole {
+  collaborator
+  reviewer
+}
+
+enum AvatarSize {
+  xlarge
+  large
+  small
+  mini
+}
+
+enum Currencies {
+  Dollar
+  Euro
+  Pound
+}
+
+enum DepictionDisplayType {
+  Timeline
+  Swimlane
+}
+
+enum ErrorID {
+  InvalidID
+  UnknownID
+  IdeaHasMaxItems
+  OperationFailed
+}
+
+enum FieldType {
+  text
+  number
+  list
+  multiList
+  teamMember
+}
+
+enum Months {
+  January
+  February
+  March
+  April
+  May
+  June
+  July
+  August
+  September
+  October
+  November
+  December
+}
+
+enum NotificationServiceType {
+  roadmapping
+  feedback
+  ideas
+}
+
+enum NotificationType {
+  group
+  single
+}
+
+enum NumberFieldFormats {
+  Currency
+  Percentage
+  General
+}
+
+enum UiBlockType {
+  text
+  span
+  modellink
+  link
+}
+
+enum UserRoles {
+  super_admin
+  support_admin
+  support
+  account_admin
+  collaborator
+  reviewer
+}
+
+interface BulkMutationResponse {
+  id: ID!
+  errorMessage: String
+}
+
+interface Field {
+  id: ID!
+  account: Account!
+  lastSaved: Date
+  name: String!
+  roadmap: Roadmap
+  isAccountField: Boolean!
+  type: String!
+}
+
+interface Identity {
+  id: ID!
+  displayName: String!
+  type: String!
+}
+
+interface ItemField {
+  fieldID: ID!
+  fieldName: String!
+  type: String!
+}
+
+interface RoadmapItem {
+  id: ID!
+  summary: String!
+  lastSaved: Date!
+  account: Account!
+  description: String
+  roadmap: Roadmap!
+  fields(limit: Int!, offset: Int!): ItemFieldsPage!
+}
+
+type Account {
+  id: ID!
+  lastSaved: Date
+  companyName: String
+  billingEmail: String!
+  billingPhone: String
+  billingCompanyName: String
+  billingFirstName: String
+  billingLastName: String
+  companySize: String
+  package: Package!
+}
+
+type APIToken implements Identity {
+  id: ID!
+  displayName: String!
+  type: String!
+  avatar(size: AvatarSize, scale: Float): String
+}
+
+type Bucket {
+  id: ID!
+  value: String!
+}
+
+type FieldDeleteResponse implements BulkMutationResponse {
+  id: ID!
+  errorMessage: String
+}
+
+type FieldsPage {
+  page: [Field!]!
+  hasMore: Boolean!
+}
+
+type FieldValuesPage {
+  page: [ListFieldValue!]!
+  hasMore: Boolean!
+}
+
+type Item implements RoadmapItem {
+  id: ID!
+  summary: String!
+  lastSaved: Date!
+  account: Account!
+  startDate: Day
+  endDate: Day
+  bucket: Bucket
+  description: String
+  isParent: Boolean!
+  isSubItem: Boolean!
+  parent: Item
+  subItems(limit: Int!, offset: Int!): ItemsPage!
+  roadmap: Roadmap!
+  keyDates(limit: Int!, offset: Int!): KeyDatesPage!
+  fields(limit: Int!, offset: Int!): ItemFieldsPage!
+  hasDependencies: Boolean!
+}
+
+type ItemDeleteResponse implements BulkMutationResponse {
+  id: ID!
+  errorMessage: String
+}
+
+type ItemFieldsPage {
+  page: [ItemField!]!
+  hasMore: Boolean!
+}
+
+type ItemListField implements ItemField {
+  fieldID: ID!
+  fieldName: String!
+  type: String!
+  valueID: ID!
+  value: String!
+}
+
+type ItemMultiListField implements ItemField {
+  fieldID: ID!
+  fieldName: String!
+  type: String!
+  values: [MultiListFieldValue!]!
+}
+
+type ItemNumberField implements ItemField {
+  fieldID: ID!
+  fieldName: String!
+  type: String!
+  value: String!
+}
+
+type ItemsPage {
+  page: [Item!]!
+  hasMore: Boolean!
+}
+
+type ItemTeamMemberField implements ItemField {
+  fieldID: ID!
+  fieldName: String!
+  type: String!
+  members: [User!]!
+}
+
+type ItemTextField implements ItemField {
+  fieldID: ID!
+  fieldName: String!
+  type: String!
+  value: String!
+}
+
+type KeyDate {
+  id: ID!
+  title: String
+  daysFromItemStart: Int!
+}
+
+type KeyDatesPage {
+  page: [KeyDate!]!
+  hasMore: Boolean!
+}
+
+type ListField implements Field {
+  id: ID!
+  account: Account!
+  lastSaved: Date
+  name: String!
+  roadmap: Roadmap
+  isAccountField: Boolean!
+  type: String!
+  values(limit: Int!, offset: Int!): FieldValuesPage!
+}
+
+type ListFieldValue {
+  id: ID!
+  value: String!
+}
+
+type Milestone implements RoadmapItem {
+  id: ID!
+  summary: String!
+  lastSaved: Date!
+  account: Account!
+  date: Day
+  description: String
+  roadmap: Roadmap!
+  fields(limit: Int!, offset: Int!): ItemFieldsPage!
+}
+
+type MilestoneDeleteResponse implements BulkMutationResponse {
+  id: ID!
+  errorMessage: String
+}
+
+type MilestonesPage {
+  page: [Milestone!]!
+  hasMore: Boolean!
+}
+
+type MultiListField implements Field {
+  id: ID!
+  account: Account!
+  lastSaved: Date
+  name: String!
+  roadmap: Roadmap
+  isAccountField: Boolean!
+  type: String!
+  values(limit: Int!, offset: Int!): FieldValuesPage!
+}
+
+type MultiListFieldValue {
+  id: ID!
+  value: String!
+}
+
+type Notification {
+  id: ID!
+  type: NotificationType!
+  title: [UiBlock!]!
+  details: [UiBlock!]
+  context: String
+  iconClass: String
+  cssClass: String
+  href: String
+  modelLinkReference: String
+  ownerName: String
+  childNotifications: [Notification!]
+  createdAt: String!
+  owner: Identity
+  ownerLabel: String
+}
+
+type NotificationsPage {
+  page: [Notification!]!
+  hasMore: Boolean!
+}
+
+type NumberField implements Field {
+  id: ID!
+  account: Account!
+  lastSaved: Date
+  name: String!
+  roadmap: Roadmap
+  isAccountField: Boolean!
+  type: String!
+  format: String!
+  decimalPlaces: Int!
+  currency: String
+}
+
+type Package {
+  id: ID!
+  name: String!
+  customIdeaViews: Boolean!
+  maxNumProducts: Int!
+  maxNumCustomFactors: Int!
+  maxNumAPITokens: Int!
+}
+
+type RemoveFieldResponse implements BulkMutationResponse {
+  id: ID!
+  errorMessage: String
+}
+
+type Roadmap {
+  id: ID!
+  title: String!
+  lastSaved: Date!
+  lastUpdatedOn: Date!
+  account: Account!
+  fields(limit: Int!, offset: Int!): FieldsPage!
+  fiscalEndMonth: Months
+  milestones(limit: Int!, offset: Int!): MilestonesPage!
+  items(limit: Int!, offset: Int!, excludeSubItems: Boolean): ItemsPage!
+  archivedOn: Date
+  archivedBy: Identity
+  restoredOn: Date
+  restoredBy: Identity
+}
+
+type RoadmapDeleteResponse implements BulkMutationResponse {
+  id: ID!
+  errorMessage: String
+}
+
+type RoadmapsPage {
+  page: [Roadmap!]!
+  hasMore: Boolean!
+}
+
+type TeamMemberField implements Field {
+  id: ID!
+  account: Account!
+  lastSaved: Date
+  name: String!
+  roadmap: Roadmap
+  isAccountField: Boolean!
+  type: String!
+  members(limit: Int!, offset: Int!): UsersPage!
+}
+
+type TextField implements Field {
+  id: ID!
+  account: Account!
+  lastSaved: Date
+  name: String!
+  roadmap: Roadmap
+  isAccountField: Boolean!
+  type: String!
+}
+
+type UiBlock {
+  type: UiBlockType!
+  text: String
+  href: String
+  className: String
+  modelReference: String
+}
+
+type User implements Identity {
+  id: ID!
+  displayName: String!
+  type: String!
+  firstName: String
+  lastName: String
+  email: String!
+  accountRole: String!
+  lastLogin: Date
+  lastSeenNotificationDate: Date
+  avatar(size: AvatarSize, scale: Float): String
+  jobTitle: String
+  isInvited: Boolean
+}
+
+type UsersPage {
+  page: [User!]!
+  hasMore: Boolean!
+}
+
+input DeactivateUserInput {
+  id: String
+  email: String
+}
+
+input FieldInput {
+  name: String!
+  type: FieldType!
+  numberFormat: NumberFieldFormats
+  currency: Currencies
+  values: [String!]
+}
+
+input ItemFieldInput {
+  id: ID
+  name: String
+  value: [String!]
+}
+
+input ItemInput {
+  summary: String!
+  startDate: Day
+  endDate: Day
+  fields: [ItemFieldInput!]
+}
+
+input ViewInput {
+  title: String
+  primaryDepictionType: DepictionDisplayType!
+  header1: String!
+  header2: String
+}
+
+type Query {
+  account: Account!
+  token: APIToken!
+  user(userID: ID!): User
+  users(limit: Int!, offset: Int!, accountRoles: [UserRoles!], searchString: String): UsersPage!
+  roadmap(roadmapID: ID!): Roadmap
+  roadmaps(limit: Int!, offset: Int!, searchString: String, includeArchivedRoadmaps: Boolean): RoadmapsPage
+  item(itemID: ID!): Item
+  items(limit: Int!, offset: Int!, searchString: String!, roadmapID: ID, excludedItemIDs: [ID!], includeArchivedRoadmapItems: Boolean): ItemsPage!
+  milestone(milestoneID: ID!): Milestone
+  milestones(limit: Int!, offset: Int!, searchString: String!, roadmapID: ID, excludedItemIDs: [ID!], includeArchivedRoadmapMilestones: Boolean): MilestonesPage!
+  field(fieldID: ID!): Field
+  notifications(service: NotificationServiceType, limit: Int!, offset: Int!): NotificationsPage!
+}
+
+type Mutation {
+  createRoadmap(title: String!, fiscalEndMonth: Months, fields: [FieldInput], items: [ItemInput], views: [ViewInput]): Roadmap!
+  updateRoadmap(roadmapID: ID!, title: String, fiscalEndMonth: Months): Roadmap!
+  deleteRoadmaps(roadmapIDs: [ID!]!): [RoadmapDeleteResponse!]!
+  archiveRoadmap(roadmapID: ID!): Roadmap!
+  restoreRoadmap(roadmapID: ID!): Roadmap!
+  createItem(roadmapID: ID!, summary: String!, description: String, startDate: Day, endDate: Day, bucket: String, parentItemID: ID, fields: [ItemFieldInput]): Item!
+  updateItem(itemID: ID!, summary: String, description: String, startDate: Day, endDate: Day, bucket: String, parentItemID: ID, fields: [ItemFieldInput]): Item!
+  deleteItems(itemIDs: [ID!]!, deleteSubItems: Boolean): [ItemDeleteResponse!]!
+  createMilestone(roadmapID: ID!, summary: String!, description: String, date: Day, milestoneType: String, fields: [ItemFieldInput]): Milestone!
+  updateMilestone(milestoneID: ID!, summary: String, description: String, date: Day, milestoneType: String, fields: [ItemFieldInput]): Milestone!
+  deleteMilestones(milestoneIDs: [ID!]!): [MilestoneDeleteResponse!]!
+  createField(roadmapID: ID, type: FieldType!, name: String!, values: [String!], format: NumberFieldFormats, decimalPlaces: Int, currency: Currencies): Field
+  updateField(fieldID: ID!, name: String, format: NumberFieldFormats, decimalPlaces: Int, currency: Currencies): Field
+  deleteFields(fieldIDs: [ID!]!): [FieldDeleteResponse!]!
+  promoteField(fieldID: ID!): Field!
+  addFieldToRoadmapItems(roadmapID: ID!, fieldID: ID!): Field!
+  addFieldToRoadmapMilestones(roadmapID: ID!, fieldID: ID!): Field!
+  removeFieldFromRoadmapItems(roadmapID: ID!, fieldID: ID!): RemoveFieldResponse
+  removeFieldFromRoadmapMilestones(roadmapID: ID!, fieldID: ID!): RemoveFieldResponse
+  addFieldValue(fieldID: ID!, value: String!): Field!
+  updateFieldValue(fieldID: ID!, existingValue: String!, newValue: String!): Field!
+  removeFieldValue(fieldID: ID!, value: String!): Field!
+  inviteUser(email: String!, accountRole: AccountRole!, firstName: String, lastName: String): User!
+  deactivateUser(deactivateUserInput: DeactivateUserInput!): Boolean!
+  markNotificationsSeen(userID: ID!): User!
+}
