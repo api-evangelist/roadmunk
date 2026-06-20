@@ -4,7 +4,7 @@ description: Roadmunk (now Strategic Roadmaps by Tempo) is a product roadmapping
   and ideas. The API enables programmatic access to nearly all platform functions
   across regional gateways covering North America, Europe, and Asia-Pacific, using
   Bearer token authentication.
-image: https://kinlane-productions.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
 url: https://raw.githubusercontent.com/api-evangelist/roadmunk/refs/heads/main/apis.yml
 created: 2026-06-13
 modified: 2026-06-13
@@ -26,7 +26,7 @@ apis:
     access to roadmaps, items, milestones, key dates, portfolios, feedback, ideas,
     customers, contacts, accounts, and user management. The API supports full CRUD
     operations for most resources and is available across three regional gateways.
-  image: https://kinlane-productions.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+  image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
   humanURL: https://www.tempo.io/products/roadmaps/api-integration
   baseURL: https://app-gateway.roadmunk.com/
   tags:
