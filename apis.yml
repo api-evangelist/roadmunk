@@ -49,6 +49,10 @@ apis:
     url: https://help.tempo.io/
     email: ''
 common:
+- type: TrustCenter
+  url: security/roadmunk-trust-center.yml
+- type: DomainSecurity
+  url: security/roadmunk-domain-security.yml
 - type: Website
   url: https://roadmunk.com
 - type: Documentation
