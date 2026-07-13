@@ -2,14 +2,14 @@
   "repo": "roadmunk",
   "feeds": [
     {
-      "source": "https://www.tempo.io/blog",
-      "feed_url": "",
+      "source": "https://www.linkedin.com/company/roadmunk",
+      "feed_url": "https://www.linkedin.com/company/roadmunk",
+      "title": "",
       "saved": 0,
-      "method": "agent-scrape",
-      "error": "listing has no determinable post dates"
+      "method": "none"
     }
   ],
-  "fetched": "2026-06-27T13:05:56Z",
+  "fetched": "2026-07-11T11:50:51Z",
   "post_count": 0,
-  "agent_pulled": "2026-06-27"
+  "agent_pulled": "2026-07-04"
 }
