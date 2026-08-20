@@ -31,6 +31,17 @@ tags:
 - Ideas
 - Milestones
 - Swimlanes
+- Timelines
+tags_raw:
+- Product Roadmapping
+- GraphQL
+- Roadmaps
+- Project Management
+- Product Management
+- Feedback
+- Ideas
+- Milestones
+- Swimlanes
 - Timeline
 apis:
 - name: Roadmunk GraphQL API
@@ -42,6 +53,14 @@ apis:
   humanURL: https://www.tempo.io/products/roadmaps/api-integration
   baseURL: https://app-gateway.roadmunk.com/
   tags:
+  - Product Roadmapping
+  - GraphQL
+  - Roadmaps
+  - Item
+  - Milestones
+  - Feedback
+  - Ideas
+  tags_raw:
   - Product Roadmapping
   - GraphQL
   - Roadmaps
