@@ -66,25 +66,124 @@
 
 Roadmunk (now Strategic Roadmaps by Tempo) is a product roadmapping tool with a GraphQL API for managing roadmaps, items, milestones, swimlanes, feedback, and ideas. The API enables programmatic access to nearly all platform functions across regional gateways covering North America, Europe, and Asia-Pacific, using Bearer token authentication.
 
-## Links
+**Areas:** Product Roadmapping · GraphQL · Roadmaps · Project Management · Product Management · Feedback · Ideas · Milestones · Swimlanes · Timelines
 
-- **Website:** https://roadmunk.com
-- **API Integration:** https://www.tempo.io/products/roadmaps/api-integration
-- **Documentation:** https://help.tempo.io/roadmaps/latest/getting-started-with-the-strategic-roadmaps-graphq
-- **Status Page:** https://status.roadmunk.com/
-- **Blog:** https://www.tempo.io/blog
-- **X:** https://x.com/roadmunkapp
-- **LinkedIn:** https://www.linkedin.com/company/roadmunk
+## Roadmunk on APIs.io
 
-## APIs.json
+Everything profiled for Roadmunk is published on APIs.io rather than in this repository. Start at the provider page — **[apis.io/providers/roadmunk/](https://apis.io/providers/roadmunk/)** — or go straight to one of the APIs or properties below.
 
-This repository contains an APIs.json profile for Roadmunk, including:
+### APIs (1)
 
-- `apis.yml` — APIs.json 0.19 index
-- `plans/roadmunk-plans-pricing.yml` — API Commons Plans 0.1
-- `rate-limits/roadmunk-rate-limits.yml` — API Commons Rate Limits 0.1
-- `finops/roadmunk-finops.yml` — FinOps Framework 1.0 FOCUS-aligned
+- [Roadmunk GraphQL API](https://apis.io/apis/roadmunk/roadmunk-graphql-api/) — The Roadmunk (Strategic Roadmaps) GraphQL API provides programmatic access to roadmaps, items, milestones, key dates, portfolios, feedback, ideas,…
 
-## Maintainer
+### Published properties
 
-Kin Lane (kin@apievangelist.com)
+Each property below is a page on APIs.io carrying the machine-readable artifact and what it says.
+
+#### GraphQL (1)
+
+GraphQL schemas.
+
+- [Roadmunk GraphQL API](https://apis.io/graphqls/roadmunk/roadmunk-graphql/)
+
+#### MCP servers (1)
+
+Model Context Protocol servers that expose the API to agents.
+
+- [roadmunk](https://apis.io/servers/roadmunk/roadmunk/)
+
+#### JSON-LD (1)
+
+Linked-data contexts for the provider's vocabulary.
+
+- [Roadmunk Context](https://apis.io/jsonld/roadmunk/roadmunk-context/)
+
+#### Security (2)
+
+Authentication, trust centre, and vulnerability disclosure.
+
+- [Roadmunk Domain Security](https://apis.io/security/roadmunk/roadmunk-domain-security/)
+- [Roadmunk Trust Center](https://apis.io/security/roadmunk/roadmunk-trust-center/)
+
+#### Plans and pricing (1)
+
+Published plans, tiers and prices.
+
+- [Roadmunk Plans Pricing](https://apis.io/plans/roadmunk/roadmunk-plans-pricing/)
+
+#### Rate limits (1)
+
+Published request limits.
+
+- [Roadmunk Rate Limits](https://apis.io/rate-limits/roadmunk/roadmunk-rate-limits/)
+
+#### FinOps (1)
+
+What the API costs to run, by operation.
+
+- [Roadmunk Finops](https://apis.io/finops/roadmunk/roadmunk-finops/)
+
+## Where to find this API
+
+Links to the company's own pages. This repository publishes no copy of their specifications — the canonical document is theirs and lives at the URLs below.
+
+- [Website](https://roadmunk.com)
+- [Documentation](https://help.tempo.io/roadmaps/latest/getting-started-with-the-strategic-roadmaps-graphq)
+- [Pricing](https://www.capterra.com/p/145895/Roadmunk/pricing/)
+- [Blog](https://www.tempo.io/blog)
+- [Status](https://status.roadmunk.com/)
+
+## API Evangelist rating
+
+**Kin Score 29.7** — thin · rubric 0.25.0 · scored 2026-10-23
+
+| Facet | Score |
+|---|---|
+| Discoverability | 68.3 |
+| Contract quality | 46.8 |
+| Contract governance | 0.0 |
+| Operational transparency | 26.3 |
+| Developer ergonomics | 11.9 |
+| Access clarity | 26.3 |
+
+**Agent readiness 22.2** — agent-aware
+
+| Agent-readiness dimension | Result |
+|---|---|
+| Spec Presence | yes |
+| Agentic Access | — |
+| Reversibility Documented | — |
+| MCP Server | verified |
+| Auth Clarity | — |
+| Idempotency | — |
+| Error Semantics | — |
+| OpenAPI Examples | — |
+| Rate Limit Signal | derived (partial credit) |
+| Event Surface Described | — |
+| Agent Skills | — |
+| Well Known Catalog | — |
+| Consent Identity | — |
+| Agent Card | — |
+| Dry Run Mode | — |
+| Delegated Identity | — |
+| Protected Resource Metadata | — |
+| Dynamic Client Registration | — |
+| Agentic Commerce | — |
+| Pagination Ratio | na |
+| Operation Distinctiveness | na |
+
+**Regulatory alignment 15.7** — Horizontal (data, software, accessibility, platform)
+
+The rubric is published at [github.com/api-evangelist/kin-score](https://github.com/api-evangelist/kin-score). The per-check breakdown behind these numbers — which checks were earned, partial or missed — along with score history and how this provider compares to its peers, is available at [apis.io/providers/roadmunk/](https://apis.io/providers/roadmunk/).
+
+## How this profile is made
+
+API Evangelist profiles a company's public API surface the way a developer would find it: the website, developer portal and documentation, the specifications it publishes, its public repositories, and its pricing, status and changelog pages. From that it derives the properties above — contracts split per API, workflows, schemas, collections, governance rules, plans and rate limits — and scores them against the published [Kin Score rubric](https://github.com/api-evangelist/kin-score).
+
+The artifacts are published on [APIs.io](https://apis.io), not in this repository. This repository is the public record for Roadmunk: the place to say something is wrong, missing or out of date, and to ask for a re-score or a removal.
+
+## Open an issue
+
+- **Something about this listing** — a wrong description, a missing API, a stale artifact or a question about the rating: [open an issue on this repository](https://github.com/api-evangelist/roadmunk/issues/new).
+- **A new API, or one that is not in the catalog yet** — [submit it on APIs.io](https://apis.io/add/).
+- **Anything else** — [the APIs.io inbox](https://github.com/api-search/inbox/issues/new) or [info@apievangelist.com](mailto:info@apievangelist.com).
